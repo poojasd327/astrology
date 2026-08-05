@@ -32,7 +32,7 @@
 
 .hero-content {
   text-align: left;
-  max-width: 1100px;
+  max-width: 1150px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -40,7 +40,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-right: auto;
-  transform: translateX(-150px); /* Moved left by 150px as requested */
+  transform: translateX(-50px); /* Moved left by 50px as requested */
 }
 
 .hero-title {
@@ -51,11 +51,25 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   color: #000000;
   margin-bottom: 2.5rem;
   line-height: 1.8;
   max-width: 800px;
+}
+
+/* Hero Button Override */
+.hero-section .btn-primary {
+  background: #e7e1d6;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.hero-section .btn-primary:hover {
+  background: #f8f8f8;
+  color: #000;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
 }
 
 /* Removed animation to prevent blurriness */

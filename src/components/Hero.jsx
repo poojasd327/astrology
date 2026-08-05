@@ -11,7 +11,9 @@ export default function Hero() {
       <div className="container hero-content animate-fade-in">
         <h1 className="hero-title">Sacred Solutions for <br />Every Life Path</h1>
         <p className="hero-subtitle delay-1">
-          Guided by 37+ years of legacy, illuminate your life's path with profound astrological insights and remedies at the Sri Guru Raghavendra Astro Center.
+          Guided by 37+ years of legacy, illuminate your life's path<br />
+          with profound astrological insights and remedies at<br />
+          the Sri Guru Raghavendra Astro Center.
         </p>
         <div className="hero-actions delay-2">
           <button className="btn-primary" onClick={openBookingModal}>Book Consultation</button>
