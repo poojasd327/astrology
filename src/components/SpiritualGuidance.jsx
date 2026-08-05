@@ -27,7 +27,7 @@ export default function SpiritualGuidance() {
     <section id="guidance">
       <div className="bg-glow" style={{ bottom: '0', left: '-10%' }}></div>
       <div className="container">
-        <h2 className="section-title">Specialized Spiritual Guidance</h2>
+        <h2 className="section-title">Specialized Spiritual <span className="title-accent">Guidance</span></h2>
         <p className="section-subtitle">Targeted remedies for specific life challenges.</p>
         
         <div className="cards-grid cols-3">

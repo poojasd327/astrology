@@ -33,7 +33,7 @@ export default function VedicConsultations() {
     <section id="consultations" className="consultations-section">
       <div className="vedic-bg-overlay" style={{ backgroundImage: "url('/kundali-bg.png')" }}></div>
       <div className="container">
-        <h2 className="section-title">Vedic Consultations</h2>
+        <h2 className="section-title">Vedic <span className="title-accent">Consultations</span></h2>
         <p className="section-subtitle">Profound insights guided by tradition.</p>
         
         <div className="cards-grid">

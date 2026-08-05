@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════
+   Testimonials Section — Infinite Slider
+═══════════════════════════════════════ */
+
+.testimonials-section {
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.testimonials-main-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.title-accent {
+  color: var(--color-primary);
+}
+
+.testimonials-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Slider viewport (contains arrows + track) ── */
+.t-slider-viewport {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+/* overflow clip */
+.t-slider-overflow {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Moving track — width & transform set by JS */
+.t-slider-track {
+  display: flex;
+  will-change: transform;
+}
+
+/* Each slide — width set by JS in pixels */
+.t-slide {
+  flex-shrink: 0;
+  padding: 1rem 0.75rem;
+  box-sizing: border-box;
+}
+
+/* ── Individual card ── */
+.t-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem 1.8rem 2.5rem;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.t-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.11);
+}
+
+/* ── Top row ── */
+.t-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.t-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(180, 130, 50, 0.3);
+}
+
+.t-avatar-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.t-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.t-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.t-location {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Stars ── */
+.t-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+
+.t-star-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--color-primary);
+}
+
+/* ── Thin divider ── */
+.t-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.2rem;
+  border: none;
+  flex-shrink: 0;
+}
+
+/* ── Body text ── */
+.t-text {
+  color: #5a5a5a;
+  font-size: 0.93rem;
+  line-height: 1.75;
+  flex-grow: 1;
+  margin: 0;
+}
+
+/* ── Watermark ── */
+.t-watermark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  width: 52px;
+  height: 52px;
+  color: rgba(201, 162, 94, 0.12);
+  pointer-events: none;
+}
+
+.t-watermark svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Arrows ── */
+.t-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 162, 94, 0.4);
+  background: #ffffff;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.t-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.t-arrow:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 6px 24px rgba(201, 162, 94, 0.4);
+}
+
+.t-arrow-prev {
+  left: -22px;
+}
+
+.t-arrow-next {
+  right: -22px;
+}
+
+/* ── Dot navigation ── */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.t-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 162, 94, 0.5);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.t-dot:hover {
+  border-color: var(--color-primary);
+}
+
+.t-dot.active {
+  width: 30px;
+  border-radius: 6px;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .t-arrow-prev { left: -16px; }
+  .t-arrow-next { right: -16px; }
+}
+
+@media (max-width: 768px) {
+  .testimonials-main-title { font-size: 2rem; }
+  .t-arrow { display: none; }
+}

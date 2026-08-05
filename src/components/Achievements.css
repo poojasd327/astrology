@@ -1,0 +1,100 @@
+/* ═══════════════════════════════════════
+   Achievements Section
+═══════════════════════════════════════ */
+
+.achievements-section {
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.achievements-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* ── Grid ── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Individual Card ── */
+.achievement-card {
+  background: linear-gradient(135deg, #FFFDF9 0%, #F4EFE6 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(201, 162, 94, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(201, 162, 94, 0.3);
+}
+
+/* ── Image Wrapper ── */
+.achievement-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Balances portrait certificates and group photos */
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.achievement-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensures certificates aren't cropped */
+  background-color: transparent; /* Fallback for transparency */
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* ── Card Footer ── */
+.achievement-footer {
+  background: linear-gradient(135deg, #C9A25E, #A07C3A); /* Premium gold background matching screenshot intent */
+  color: #ffffff;
+  padding: 1.25rem 1rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.achievement-footer p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .achievement-img-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}

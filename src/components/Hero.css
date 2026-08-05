@@ -1,5 +1,5 @@
 .hero-section {
-  min-height: 90vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +17,6 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
-  transform: scale(1.05);
-  animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
 .hero-overlay {
@@ -27,44 +25,52 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(252, 250, 245, 0.4), rgba(252, 250, 245, 0.95));
+  background: transparent; /* Removed to make image fully visible */
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
-  text-align: center;
-  max-width: 800px;
+  text-align: left;
+  max-width: 1100px;
+  width: 100%;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-right: auto;
+  transform: translateX(-150px); /* Moved left by 150px as requested */
 }
 
 .hero-title {
-  font-size: 4.2rem;
-  color: var(--color-text-main);
+  font-size: 5rem;
+  color: #000000;
   margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
-  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  color: #000000;
   margin-bottom: 2.5rem;
   line-height: 1.8;
-  max-width: 700px;
+  max-width: 800px;
 }
 
-@keyframes slowZoom {
-  0% { transform: scale(1.05); }
-  100% { transform: scale(1.15); }
+/* Removed animation to prevent blurriness */
+
+@media (max-width: 1200px) {
+  .hero-content {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 }

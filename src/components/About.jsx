@@ -9,7 +9,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-image-wrapper">
             <div className="about-image-frame glass-panel">
-              <img src="/pandith-portrait.png" alt="Pandith Ramesh Shastri" className="about-img" />
+              <img src="/swamy.png" alt="Pandith Ramesh Shastri" className="about-img" />
               <div className="about-experience">
                 <span className="exp-number">37+</span>
                 <span className="exp-text">Years of<br/>Legacy</span>
@@ -18,7 +18,7 @@ export default function About() {
           </div>
           
           <div className="about-content">
-            <h2 className="section-title" style={{ textAlign: 'left' }}>Meet Pandith Ramesh Shastri</h2>
+            <h2 className="section-title" style={{ textAlign: 'left' }}>Meet Pandith <span className="title-accent">Ramesh Shastri</span></h2>
             <p className="about-desc">
               Pandith Ramesh Shastri is a renowned astrologer in Bangalore, trusted by thousands for his accurate astrological guidance and personalized solutions. With years of expertise in Vedic astrology, palm reading, and face reading, he helps individuals overcome challenges related to marriage, love, career, business, finances, family, and children.
             </p>

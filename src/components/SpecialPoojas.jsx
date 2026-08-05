@@ -6,42 +6,37 @@ const poojas = [
   {
     title: 'Navagraha Shanti',
     desc: 'Pacify malefic planetary influences. This essential ritual restores balance to your life by appeasing the nine celestial bodies.',
-    image: '/navagraha-shanti.png'
-  },
-  {
-    title: 'Maha Mrityunjaya Homa',
-    desc: 'A powerful fire ritual dedicated to Lord Shiva. Recommended for overcoming severe health crises and seeking profound spiritual rejuvenation.',
-    image: '/homa-ritual.png'
+    image: '/navagraha.webp'
   },
   {
     title: 'Lakshmi Pooja',
     desc: 'Invoke the Goddess of Wealth. This ceremony is meticulously performed to attract financial stability and ensure a prosperous household.',
-    image: '/lakshmi-pooja.png'
+    image: '/lakshmi.webp'
   },
   {
     title: 'Ashlesha Bali Homa',
     desc: 'A sacred ritual performed to appease the serpent deities, providing relief from Sarpa Dosha and ensuring protection for the family.',
-    image: '/temple-ritual.png'
+    image: '/ashlesha.webp'
   },
   {
     title: 'Rahu Ketu Shanti Homa',
     desc: 'Targeted remedies to balance the malefic effects of lunar nodes, clearing path-blocks and restoring stability in life.',
-    image: '/navagraha-shanti.png'
+    image: '/rahu kethu.webp'
   },
   {
     title: 'Rana Chandi Homa',
     desc: 'A powerful invocation of Goddess Chandi to overcome obstacles, gain victory over adversities, and ensure divine protection.',
-    image: '/lakshmi-pooja.png'
+    image: '/rana chandi.webp'
   },
   {
     title: 'Shatru Stambhan Pooja',
     desc: 'A spiritual shield against negative influences and competitors, fostering peace and neutralizing hidden animosities.',
-    image: '/temple-ritual.png'
+    image: '/shatru.webp'
   },
   {
     title: 'Ashta Shakti Homa',
     desc: 'Invoking the eight divine energies to grant holistic prosperity, courage, and spiritual empowerment.',
-    image: '/homa-ritual.png'
+    image: '/ashta.webp'
   }
 ];
 
