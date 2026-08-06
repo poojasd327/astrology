@@ -9,7 +9,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('https://crm-leads-service.pointofconnect.com/api/leads/webapi/1ac78a29-9fa6-4c29-8e35-5b563c867db6', {
         method: 'POST',
@@ -56,7 +56,7 @@ export default function Contact() {
                 <ul className="location-details">
                   <li>
                     <i className="fa-solid fa-map"></i>
-                    <span>108 Sacred Path Road, 4th Block, Jayanagar, Bangalore 560011</span>
+                    <span>#19, Jayanagar 5th Block, 5th Main 40th Cross Near Rashtreeya Vidyalaya Metro Station, Bangalore.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-phone"></i>
@@ -72,32 +72,32 @@ export default function Contact() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Full Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   required
-                  placeholder="Your earthly name" 
-                  className="form-control" 
+                  placeholder="Your earthly name"
+                  className="form-control"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
               <div className="form-group">
                 <label>Contact Number</label>
-                <input 
-                  type="tel" 
+                <input
+                  type="tel"
                   required
-                  placeholder="+91" 
-                  className="form-control" 
+                  placeholder="+91"
+                  className="form-control"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
               </div>
               <div className="form-group">
                 <label>Area of Concern</label>
-                <select 
+                <select
                   className="form-control"
                   value={formData.concern}
-                  onChange={(e) => setFormData({...formData, concern: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
                 >
                   <option value="">Select an area</option>
                   <option value="Kundli & Horoscope">Kundli & Horoscope</option>

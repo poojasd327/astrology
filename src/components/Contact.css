@@ -152,3 +152,9 @@ select.form-control option {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .location-city {
+    font-size: 1.6rem;
+  }
+}

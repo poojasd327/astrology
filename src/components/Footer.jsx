@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
-          
+
           {/* Brand Column */}
           <div className="footer-brand">
             <a href="#" className="footer-logo-link">
@@ -19,12 +19,6 @@ export default function Footer() {
             <p className="footer-desc">
               Guided by 37+ years of legacy, illuminate your life's path with profound astrological insights and remedies at the Sri Guru Raghavendra Astro Center.
             </p>
-            <div className="social-links">
-              <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
-              <a href="#" aria-label="WhatsApp"><i className="fa-brands fa-whatsapp"></i></a>
-            </div>
           </div>
 
           {/* Quick Links Column */}
@@ -45,7 +39,7 @@ export default function Footer() {
             <ul>
               <li>
                 <i className="fa-solid fa-location-dot"></i>
-                <span>Sri Guru Raghavendra Astro Center, Bangalore</span>
+                <span>#19, Jayanagar 5th Block, 5th Main 40th Cross Near Rashtreeya Vidyalaya Metro Station, Bangalore.</span>
               </li>
               <li>
                 <i className="fa-solid fa-phone"></i>
