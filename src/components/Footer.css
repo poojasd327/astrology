@@ -208,8 +208,14 @@
   /* Center contact items */
   .footer-contact ul {
     align-items: center;
+   
   }
   .footer-contact li {
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
+    gap: 1rem;
+    text-align: left;
+    padding: 0 1.5rem;
   }
 }

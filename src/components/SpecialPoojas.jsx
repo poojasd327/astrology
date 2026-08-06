@@ -127,7 +127,7 @@ export default function SpecialPoojas() {
       <div className="poojas-sticky-wrapper">
         <div className="container" style={{ paddingTop: '4rem', paddingBottom: '2rem', textAlign: 'center' }}>
           <div className="section-badge">Rituals & Offerings</div>
-          <h2 className="section-title">Special Pooja's & Homa's</h2>
+          <h2 className="section-title">Special <span className="title-accent">Pooja's & Homa's</span></h2>
         </div>
         
         <div className="container poojas-card-container" style={{ overflow: 'hidden' }} ref={containerRef}>
