@@ -124,10 +124,17 @@ export default function Contact() {
                   onChange={(e) => setFormData({...formData, concern: e.target.value})}
                 >
                   <option value="">Select an area</option>
-                  <option value="Career & Business">Career & Business</option>
+                  <option value="Kundli & Horoscope">Kundli & Horoscope</option>
+                  <option value="Job & Career">Job & Career</option>
                   <option value="Love & Relationships">Love & Relationships</option>
-                  <option value="Health & Wellbeing">Health & Wellbeing</option>
-                  <option value="Spiritual Growth">Spiritual Growth</option>
+                  <option value="Business & Finance">Business & Finance</option>
+                  <option value="Foreign Travel & Visa">Foreign Travel & Visa</option>
+                  <option value="Health & Well-being">Health & Well-being</option>
+                  <option value="Mental Peace & Stress">Mental Peace & Stress</option>
+                  <option value="Loan & Financial Issues">Loan & Financial Issues</option>
+                  <option value="Marriage Problems">Marriage Problems</option>
+                  <option value="Black Magic & Negative Energy">Black Magic & Negative Energy</option>
+                  <option value="Court Cases & Legal Matters">Court Cases & Legal Matters</option>
                 </select>
               </div>
               <button type="submit" className="btn-primary w-100 mt-3" disabled={isSubmitting}>

@@ -10,7 +10,7 @@ export const openBookingModal = () => {
 
 export default function BookingModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', concern: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ export default function BookingModal() {
         body: JSON.stringify({
           "name": formData.name,
           "phone-number": formData.phone,
+          "concern-area": formData.concern,
           "message": formData.message,
           "form-name": "Popup"
         }),
@@ -40,7 +41,7 @@ export default function BookingModal() {
       if (response.ok) {
         alert('Thank you! Your request has been submitted successfully.');
         setIsOpen(false);
-        setFormData({ name: '', phone: '', message: '' });
+        setFormData({ name: '', phone: '', concern: '', message: '' });
       } else {
         alert('Something went wrong. Please try again.');
       }
@@ -81,6 +82,27 @@ export default function BookingModal() {
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
             />
+          </div>
+          <div className="form-group">
+            <label>Area of Concern</label>
+            <select 
+              className="form-control"
+              value={formData.concern}
+              onChange={(e) => setFormData({...formData, concern: e.target.value})}
+            >
+              <option value="">Select an area</option>
+              <option value="Kundli & Horoscope">Kundli & Horoscope</option>
+              <option value="Job & Career">Job & Career</option>
+              <option value="Love & Relationships">Love & Relationships</option>
+              <option value="Business & Finance">Business & Finance</option>
+              <option value="Foreign Travel & Visa">Foreign Travel & Visa</option>
+              <option value="Health & Well-being">Health & Well-being</option>
+              <option value="Mental Peace & Stress">Mental Peace & Stress</option>
+              <option value="Loan & Financial Issues">Loan & Financial Issues</option>
+              <option value="Marriage Problems">Marriage Problems</option>
+              <option value="Black Magic & Negative Energy">Black Magic & Negative Energy</option>
+              <option value="Court Cases & Legal Matters">Court Cases & Legal Matters</option>
+            </select>
           </div>
           <div className="form-group">
             <label>Message (Optional)</label>

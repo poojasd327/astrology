@@ -85,6 +85,12 @@
   white-space: nowrap;
 }
 
+.site-header:not(.scrolled) .header-cta {
+  background: #e7e1d6;
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
 /* ── Hamburger (mobile only) ── */
 .hamburger {
   display: none;
