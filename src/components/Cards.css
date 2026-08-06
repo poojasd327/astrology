@@ -1,6 +1,6 @@
 .consultations-section {
   position: relative;
-  overflow: hidden;
+  /* overflow:hidden removed — it breaks position:sticky on child cards */
 }
 
 .vedic-bg-overlay {
@@ -39,6 +39,11 @@
   height: 100%;
 }
 
+/* Gold line for the 4 boxes in Consultations */
+.consultations-section .card {
+  border-left: 4px solid var(--color-primary);
+}
+
 .card-icon {
   width: 50px;
   height: 50px;
@@ -65,14 +70,64 @@
 }
 
 @media (max-width: 992px) {
-  .cards-grid, .cards-grid.cols-3 {
+  .cards-grid,
+  .cards-grid.cols-3 {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
+/* ── Sticky stacking card effect — Consultations section only ── */
 @media (max-width: 768px) {
-  .cards-grid, .cards-grid.cols-3 {
+  .consultations-section {
+    padding-bottom: 4rem;
+  }
+
+  .consultations-section .cards-grid {
+    gap: 0;
+  }
+
+  .consultations-section .cards-grid .card {
+    position: sticky;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Stagger top so each card peeks above the previous one */
+  .consultations-section .cards-grid .card:nth-child(1) { top: 80px;  z-index: 1; }
+  .consultations-section .cards-grid .card:nth-child(2) { top: 92px;  z-index: 2; }
+  .consultations-section .cards-grid .card:nth-child(3) { top: 104px; z-index: 3; }
+  .consultations-section .cards-grid .card:nth-child(4) { top: 116px; z-index: 4; }
+
+  /* Spiritual Guidance (cols-3) — plain vertical stack, no sticky */
+  .cards-grid.cols-3 {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cards-grid.cols-3 .card {
+    position: static;
+    top: auto;
+    z-index: auto;
+    margin-bottom: 0;
+  }
+
+  /* Extra specificity for #guidance section */
+  #guidance .cards-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  #guidance .cards-grid .card {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
   }
 }

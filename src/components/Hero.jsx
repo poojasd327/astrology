@@ -5,7 +5,7 @@ import './Hero.css';
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div className="hero-bg" style={{ backgroundImage: "url('/hero section-1.png')" }}></div>
+      <div className="hero-bg"></div>
       <div className="hero-overlay"></div>
 
       <div className="container hero-content animate-fade-in">

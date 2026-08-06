@@ -81,20 +81,74 @@
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .achievements-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .achievement-img-wrapper {
-    aspect-ratio: 1 / 1;
-  }
+/* ── Dot navigation — hidden on desktop ── */
+.ach-dots {
+  display: none;
 }
 
+/* ── Mobile: horizontal snap slider ── */
 @media (max-width: 768px) {
+  .achievements-section .container {
+    overflow: visible;
+  }
+
   .achievements-grid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2.5rem; /* Increased gap to balance smaller width */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 0.5rem 2.5rem 1.5rem; /* 2.5rem padding centers the smaller card */
+    margin: 0 -1.5rem;
+    scrollbar-width: none;
+  }
+  .achievements-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .achievement-card {
+    flex: 0 0 calc(100vw - 5rem); /* Reduced width */
+    max-width: none;
+    scroll-snap-align: center;
+    height: auto;
+  }
+
+  /* Reduce height on mobile to make cards more compact */
+  .achievement-img-wrapper {
+    aspect-ratio: auto;
+    height: 340px;
+  }
+
+  /* Show dots below slider on mobile */
+  .ach-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.25rem;
+  }
+
+  .ach-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(201, 162, 94, 0.5);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .ach-dot:hover {
+    border-color: var(--color-primary);
+  }
+
+  .ach-dot.active {
+    width: 30px;
+    border-radius: 6px;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
   }
 }

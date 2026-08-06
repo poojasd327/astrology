@@ -47,13 +47,16 @@ export default function SpecialPoojas() {
   const [translateX, setTranslateX] = useState(0);
   const [progress, setProgress] = useState(0);
   const [cardsInView, setCardsInView] = useState(3);
+  const cardsInViewRef = useRef(3);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setCardsInView(1);
+        cardsInViewRef.current = 1;
       } else {
         setCardsInView(3);
+        cardsInViewRef.current = 3;
       }
     };
     handleResize();
@@ -69,6 +72,30 @@ export default function SpecialPoojas() {
       const top = rect.top;
       const height = rect.height;
       const windowHeight = window.innerHeight;
+      const isMobile = cardsInViewRef.current === 1;
+
+      let step = 0;
+
+      if (isMobile) {
+        // On mobile: each card occupies full viewport width (including margins)
+        // Step = card width + gap, measured from the track directly
+        if (trackRef.current.children.length > 1) {
+          const c0 = trackRef.current.children[0];
+          const c1 = trackRef.current.children[1];
+          step = c1.getBoundingClientRect().left - c0.getBoundingClientRect().left;
+        } else if (trackRef.current.children.length > 0) {
+          step = trackRef.current.children[0].clientWidth + 32;
+        }
+      } else {
+        const containerWidth = containerRef.current.clientWidth;
+        if (trackRef.current.children.length > 1) {
+          const c0 = trackRef.current.children[0];
+          const c1 = trackRef.current.children[1];
+          step = c1.offsetLeft - c0.offsetLeft;
+        } else {
+          step = (containerWidth + 32) / 3;
+        }
+      }
       
       if (top <= 0) {
         const scrollableDistance = height - windowHeight;
@@ -76,13 +103,8 @@ export default function SpecialPoojas() {
         p = Math.max(0, Math.min(1, p));
         setProgress(p);
         
-        // Calculate discrete steps so only full cards are visible
-        const totalSteps = Math.max(1, poojas.length - cardsInView + 1);
+        const totalSteps = Math.max(1, poojas.length - cardsInViewRef.current + 1);
         const index = Math.round(p * (totalSteps - 1));
-        
-        const containerWidth = containerRef.current.clientWidth;
-        const gap = 32; // 2rem gap
-        const step = (containerWidth + gap) / cardsInView;
         
         setTranslateX(index * step);
       } else if (top > 0) {
@@ -92,7 +114,6 @@ export default function SpecialPoojas() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Trigger layout measurement safely after mount
     requestAnimationFrame(() => handleScroll()); 
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -109,7 +130,7 @@ export default function SpecialPoojas() {
           <h2 className="section-title">Special Pooja's & Homa's</h2>
         </div>
         
-        <div className="container" style={{ overflow: 'hidden' }} ref={containerRef}>
+        <div className="container poojas-card-container" style={{ overflow: 'hidden' }} ref={containerRef}>
           <div className="poojas-horizontal-container">
             <div 
               ref={trackRef}

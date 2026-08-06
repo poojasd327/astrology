@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <i className="fa-solid fa-envelope"></i>
-                <span><a href="mailto:info@rameshshastriastro.com">info@rameshshastriastro.com</a></span>
+                <span><a href="mailto:brameshshastri@gmail.com">brameshshastri@gmail.com</a></span>
               </li>
             </ul>
           </div>

@@ -14,6 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('/hero section-1.png');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -82,9 +83,23 @@
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 3.2rem;
+    font-size: 32px;
+    margin-bottom: 10px;
   }
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 17px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .hero-subtitle br {
+    display: none;
+  }
+  .hero-bg {
+    background-image: url('/mobile-hero (1).png');
+  }
+  .hero-content {
+    margin-top: -195px;
+    text-align: center;
+    align-items: center;
   }
 }

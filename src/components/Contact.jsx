@@ -50,37 +50,13 @@ export default function Contact() {
 
             <div className="location-cards">
               <div className="glass-panel location-card">
-                <div className="location-city">Bangalore</div>
-                <div className="location-hub">JAYANAGAR HUB</div>
+                <div className="location-city">Bangalore & Chennai</div>
+                <div className="location-hub">ASTRO CENTER</div>
 
                 <ul className="location-details">
                   <li>
                     <i className="fa-solid fa-map"></i>
                     <span>108 Sacred Path Road, 4th Block, Jayanagar, Bangalore 560011</span>
-                  </li>
-                  <li>
-                    <i className="fa-regular fa-clock"></i>
-                    <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-phone"></i>
-                    <span>+91 9036164617</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="glass-panel location-card">
-                <div className="location-city">Chennai</div>
-                <div className="location-hub">ASTRO AVENUE</div>
-
-                <ul className="location-details">
-                  <li>
-                    <i className="fa-solid fa-map"></i>
-                    <span>45 Cosmic Alignment St, T. Nagar, Chennai 600017</span>
-                  </li>
-                  <li>
-                    <i className="fa-regular fa-clock"></i>
-                    <span>Tue - Sun: 10:00 AM - 8:00 PM</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-phone"></i>

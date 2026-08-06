@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useRef, useState, useEffect } from 'react';
 import './Achievements.css';
 
 const achievements = [
@@ -21,10 +22,39 @@ const achievements = [
 ];
 
 export default function Achievements() {
+  const gridRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Update active dot as user swipes
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const handleScroll = () => {
+      const card = grid.querySelector('.achievement-card');
+      if (!card) return;
+      const cardWidth = card.offsetWidth + 16; // 16px = gap 1rem
+      const index = Math.round(grid.scrollLeft / cardWidth);
+      setActiveIndex(Math.max(0, Math.min(index, achievements.length - 1)));
+    };
+    grid.addEventListener('scroll', handleScroll, { passive: true });
+    return () => grid.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Click dot → scroll to that card
+  const scrollToCard = (index) => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const card = grid.querySelector('.achievement-card');
+    if (!card) return;
+    const cardWidth = card.offsetWidth + 16;
+    grid.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+    setActiveIndex(index);
+  };
+
   return (
     <section className="achievements-section" id="achievements">
       <div className="container">
-        
+
         {/* Header */}
         <div className="achievements-header animate-fade-in">
           <div className="section-badge">Awards & Recognition</div>
@@ -36,18 +66,18 @@ export default function Achievements() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="achievements-grid">
+        {/* Grid / Slider */}
+        <div className="achievements-grid" ref={gridRef}>
           {achievements.map((item, index) => (
-            <div 
-              className="achievement-card animate-fade-in" 
-              key={index} 
+            <div
+              className="achievement-card animate-fade-in"
+              key={index}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="achievement-img-wrapper">
-                <img 
-                  src={item.image} 
-                  alt={item.text} 
+                <img
+                  src={item.image}
+                  alt={item.text}
                   className="achievement-img"
                   loading="lazy"
                 />
@@ -56,6 +86,18 @@ export default function Achievements() {
                 <p>{item.text}</p>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Dot navigation — hidden on desktop, shown on mobile via CSS */}
+        <div className="ach-dots">
+          {achievements.map((_, i) => (
+            <button
+              key={i}
+              className={`ach-dot${i === activeIndex ? ' active' : ''}`}
+              aria-label={`Go to achievement ${i + 1}`}
+              onClick={() => scrollToCard(i)}
+            />
           ))}
         </div>
 
