@@ -9,14 +9,14 @@ export default function About() {
         <div className="about-grid">
           <div className="about-image-wrapper">
             <div className="about-image-frame glass-panel">
-              <img src="/swamy.png" alt="Pandith Ramesh Shastri" className="about-img" />
+              <img src="/swamy1.avif" alt="Pandith Ramesh Shastri" className="about-img" />
               <div className="about-experience">
                 <span className="exp-number">37+</span>
-                <span className="exp-text">Years of<br/>Legacy</span>
+                <span className="exp-text">Years of<br />Legacy</span>
               </div>
             </div>
           </div>
-          
+
           <div className="about-content">
             <h2 className="section-title" style={{ textAlign: 'left' }}>Meet Pandith <span className="title-accent">Ramesh Shastri</span></h2>
             <p className="about-desc">
@@ -25,7 +25,7 @@ export default function About() {
             <p className="about-desc">
               His practical approach, deep understanding, and effective remedies have helped many find clarity, confidence, and peace of mind. If you're looking for a reliable astrologer in Bengaluru to guide you through life's uncertainties, Pandith Ramesh Shastri is here to help you move forward with confidence.
             </p>
-            
+
             <div className="features-grid">
               <div className="feature-item">
                 <div className="feature-icon"><i className="fa-solid fa-star"></i></div>
